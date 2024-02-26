@@ -1,0 +1,38 @@
+{% extends 'infoproduct/base.html' %}
+
+{% block category %}
+
+<h1>Категории продуктов</h1>
+
+<div style="display: flex;">
+
+    <!-- Список категорий -->
+    <div style="width: 500px;">
+        {% for category in categories %}
+            <h2>{{ category.name }}</h2>
+            <form method="get" action="{% url 'products_by_category' category.slug %}">
+                <button type="submit">Получить продукты</button>
+            </form>
+        {% endfor %}
+    </div>
+
+    <!-- Продукты выбранной категории -->
+    <div style="margin-left: 20px;">
+        {% for category, products in products_by_category.items %}
+            <h2>Продукты категории "{{ category.name }}"</h2>
+            {% for product in products %}
+                <div>
+                    <h3><a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a></h3>
+                    <p>{{ product.title }}</p>
+                    <p>{{ product.desc }}</p>
+                    <!-- Добавьте больше полей при необходимости -->
+                    <img src="{{ product.image1.url }}" alt="{{ product.name }} Изображение">
+                    <!-- Добавьте больше изображений при необходимости -->
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock category %}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }} - Детальный просмотр продукта</title>
+</head>
+<body>
+
+<h1>{{ product.name }}</h1>
+<p>{{ product.title }}</p>
+<p>{{ product.desc }}</p>
+<p>{{ product.process }}</p>
+
+<img src="{{ product.image1.url }}" alt="{{ product.name }} Изображение">
+<img src="{{ product.image2.url }}" alt="{{ product.name }} Изображение">
+<img src="{{ product.image3.url }}" alt="{{ product.name }} Изображение">
+
