@@ -19,7 +19,8 @@ class Product(models.Model):
     number = models.CharField(verbose_name='Номер', max_length=20, validators=[validate_phone_number])
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
-    image = models.ImageField(upload_to='products_photos/', blank=True, null=True)
+    image = models.ImageField(upload_to='products_photos/', blank=False)
+    
 
     
 # class ProductImage(models.Model):
