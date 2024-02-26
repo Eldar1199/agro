@@ -4,6 +4,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+from apps.infoproduct.views import *
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -21,7 +22,9 @@ urlpatterns = [
     path('profilee/', include('apps.profilee.urls')),
     path('', include('apps.product.urls')),
     path('', include('apps.review.urls')),
+    path('', include('apps.infoproduct.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # Исправлено
+

@@ -28,6 +28,8 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
+
+
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '34.30.6.145']
 
 
@@ -52,6 +54,7 @@ INSTALLED_APPS = [
     'apps.product',
     'apps.infohub',
     'apps.review',
+    'apps.infoproduct',
 ]
 
 MIDDLEWARE = [
